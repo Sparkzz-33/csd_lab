@@ -1,0 +1,51 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/Adder16.hdl
+
+/**
+ * Adds two 16-bit values.
+ * The most significant carry bit is ignored.
+ */
+
+CHIP AddSub16 {
+    IN a[16], b[16], c;
+    OUT out[16];
+
+    PARTS:
+   // Put you code here:
+   Xor(a = c, b = b[0], out = b1);
+   Xor(a = c, b = b[1], out = b2);
+   Xor(a = c, b = b[2], out = b3);
+   Xor(a = c, b = b[3], out = b4);
+   Xor(a = c, b = b[4], out = b5);
+   Xor(a = c, b = b[5], out = b6);
+   Xor(a = c, b = b[6], out = b7);
+   Xor(a = c, b = b[7], out = b8);
+   Xor(a = c, b = b[8], out = b9);
+   Xor(a = c, b = b[9], out = b10);
+   Xor(a = c, b = b[10], out = b11);
+   Xor(a = c, b = b[11], out = b12);
+   Xor(a = c, b = b[12], out = b13);
+   Xor(a = c, b = b[13], out = b14);
+   Xor(a = c, b = b[14], out = b15);
+   Xor(a = c, b = b[15], out = b16);
+   FullAdder(a=a[0],b=b1,c=c,sum=out[0],carry=carry1);
+   FullAdder(a=a[1],b=b2,c=carry1,sum=out[1],carry=carry2);
+   FullAdder(a=a[2],b=b3,c=carry2,sum=out[2],carry=carry3);
+   FullAdder(a=a[3],b=b4,c=carry3,sum=out[3],carry=carry4);
+   FullAdder(a=a[4],b=b5,c=carry4,sum=out[4],carry=carry5);
+   FullAdder(a=a[5],b=b6,c=carry5,sum=out[5],carry=carry6);
+   FullAdder(a=a[6],b=b7,c=carry6,sum=out[6],carry=carry7);
+   FullAdder(a=a[7],b=b8,c=carry7,sum=out[7],carry=carry8);
+   FullAdder(a=a[8],b=b9,c=carry8,sum=out[8],carry=carry9);
+   FullAdder(a=a[9],b=b10,c=carry9,sum=out[9],carry=carry10);
+   FullAdder(a=a[10],b=b11,c=carry10,sum=out[10],carry=carry11);
+   FullAdder(a=a[11],b=b12,c=carry11,sum=out[11],carry=carry12);
+   FullAdder(a=a[12],b=b13,c=carry12,sum=out[12],carry=carry13);
+   FullAdder(a=a[13],b=b14,c=carry13,sum=out[13],carry=carry14);
+   FullAdder(a=a[14],b=b15,c=carry14,sum=out[14],carry=carry15);
+   FullAdder(a=a[15],b=b16,c=carry15,sum=out[15],carry=carry16);
+
+    
+}
