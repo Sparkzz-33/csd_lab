@@ -3,9 +3,9 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/03/a/PC.tst
 
-load PC.hdl,
-output-file PC.out,
-compare-to PC.cmp,
+load CS0713PC16bit.hdl,
+output-file CS0713PC16bit.out,
+compare-to CS0713PC16bit.cmp,
 output-list time%S1.4.1 in%D1.6.1 reset%B2.1.2 load%B2.1.2 inc%B2.1.2 out%D1.6.1;
 
 set in 0,
@@ -13,7 +13,7 @@ set reset 0,
 set load 0,
 set inc 0,
 tick,
-output;
+output;s
 
 tock,
 output;

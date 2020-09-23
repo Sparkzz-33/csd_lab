@@ -1,0 +1,23 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/03/a/PC.hdl
+
+/**
+ * A 16-bit counter with load and reset control bits.
+ * if      (reset[t] == 1) out[t+1] = 0
+ * else if (load[t] == 1)  out[t+1] = in[t]
+ * else if (inc[t] == 1)   out[t+1] = out[t] + 1  (integer addition)
+ * else                    out[t+1] = out[t]
+ */
+
+CHIP CS0713Counter8 {
+    IN in[8],load, sel;
+    OUT out[8];
+
+    PARTS:
+    // Put your code here:
+    AddSub16(a[0..7]=out3, a[8..15]=false, b[0]=true, b[1..15] = false, c=sel, out[0..7] = out1);
+    Mux8(a=out1, b=in, sel=load, out=out4);
+    CS0713Reg8Bit(in=out4,load=true,out=out3, out = out);
+}

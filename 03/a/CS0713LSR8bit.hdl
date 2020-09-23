@@ -11,10 +11,14 @@
  * else                    out[t+1] = out[t]
  */
 
-CHIP PC {
-    IN in[16],load,inc,reset;
-    OUT out[16];
+CHIP CS0713LSR8bit {
+    IN in[8],load,shift;
+    OUT out[8];
 
     PARTS:
     // Put your code here:
+    SL(in = out3, out = out1);
+    Mux8(a=out3,b=out1,sel=shift,out=out2);
+    Mux8(a=out2, b=in, sel=load, out=out4);
+    CS0713Reg8Bit(in=out4,load=true,out=out3, out = out);
 }
