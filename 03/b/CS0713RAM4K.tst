@@ -3,9 +3,9 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/03/b/RAM4K.tst
 
-load RAM4K.hdl,
-output-file RAM4K.out,
-compare-to RAM4K.cmp,
+load CS0713RAM4K.hdl,
+output-file CS0713RAM4K.out,
+compare-to CS0713RAM4K.cmp,
 output-list time%S1.4.1 in%D1.6.1 load%B2.1.2 address%D2.4.2 out%D1.6.1;
 
 set in 0,

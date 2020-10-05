@@ -3,9 +3,9 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/03/a/RAM8.tst
 
-load RAM8.hdl,
-output-file RAM8.out,
-compare-to RAM8.cmp,
+load CS0713RAM8.hdl,
+output-file CS0713RAM8.out,
+compare-to CS0713RAM8.cmp,
 output-list time%S1.4.1 in%D1.6.1 load%B2.1.2 address%D3.1.3 out%D1.6.1;
 
 set in 0,
